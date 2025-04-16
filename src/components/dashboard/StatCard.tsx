@@ -28,14 +28,14 @@ export function StatCard({
   return (
     <Card className={cn("overflow-hidden backdrop-blur-lg border-white/5 shadow-lg", className)}>
       <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-        <CardTitle className="text-sm font-medium bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">{title}</CardTitle>
+        <CardTitle className="text-sm font-medium text-white/80">{title}</CardTitle>
         <div className={cn("p-2 rounded-full bg-gradient-to-br from-white/10 to-transparent", iconColor)}>
-          <Icon className="h-5 w-5" />
+          <Icon className="h-5 w-5 text-white" />
         </div>
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">{value}</div>
-        {description && <p className="text-xs text-muted-foreground mt-1">{description}</p>}
+        <div className="text-2xl font-bold text-white">{value}</div>
+        {description && <p className="text-xs text-white/70 mt-1">{description}</p>}
         {trend && (
           <div className="flex items-center mt-2">
             <span
@@ -47,7 +47,7 @@ export function StatCard({
               {trend.isPositive ? "+" : "-"}
               {Math.abs(trend.value)}%
             </span>
-            <span className="text-xs text-muted-foreground">from last month</span>
+            <span className="text-xs text-white/50">from last month</span>
           </div>
         )}
       </CardContent>
