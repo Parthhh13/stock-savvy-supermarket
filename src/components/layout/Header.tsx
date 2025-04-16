@@ -29,18 +29,18 @@ export function Header({ sidebarOpen, toggleSidebar }: HeaderProps) {
   };
 
   return (
-    <header className="bg-white border-b border-border h-16 flex items-center justify-between px-4 md:px-6 sticky top-0 z-30">
+    <header className="bg-gradient-to-r from-[#111827] via-[#192339] to-[#0F172A] border-b border-white/10 h-16 flex items-center justify-between px-4 md:px-6 sticky top-0 z-30">
       <div className="flex items-center">
         <Button
-          variant="ghost"
+          variant="outline"
           size="icon"
-          className="mr-2"
+          className="mr-2 text-white hover:bg-white/10"
           onClick={toggleSidebar}
           aria-label="Toggle sidebar"
         >
           <Menu className="h-5 w-5" />
         </Button>
-        <h1 className="text-xl font-bold text-primary">
+        <h1 className="text-xl font-bold text-white">
           Stock Savvy Supermarket
         </h1>
       </div>
@@ -48,14 +48,14 @@ export function Header({ sidebarOpen, toggleSidebar }: HeaderProps) {
       <div className="flex items-center gap-2">
         {(user?.role === "admin" || user?.role === "cashier") && (
           <Button
-            variant="ghost"
+            variant="outline"
             size="icon"
-            className="relative"
+            className="relative text-white hover:bg-white/10"
             onClick={() => navigate("/billing")}
           >
             <ShoppingCart className="h-5 w-5" />
             {totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 {totalItems}
               </span>
             )}
@@ -63,9 +63,9 @@ export function Header({ sidebarOpen, toggleSidebar }: HeaderProps) {
         )}
 
         <Button
-          variant="ghost"
+          variant="outline"
           size="icon"
-          className="relative"
+          className="text-white hover:bg-white/10"
         >
           <Bell className="h-5 w-5" />
         </Button>
@@ -73,22 +73,27 @@ export function Header({ sidebarOpen, toggleSidebar }: HeaderProps) {
         {user && (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="ml-2">
+              <Button variant="outline" size="icon" className="ml-2 text-white hover:bg-white/10">
                 <User className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem className="flex flex-col items-start">
-                <span className="font-medium">{user.name}</span>
-                <span className="text-xs text-muted-foreground">{user.email}</span>
-                <span className="text-xs text-muted-foreground capitalize mt-1">
-                  Role: {user.role}
-                </span>
+            <DropdownMenuContent align="end" className="w-56 bg-[#192339] border-white/10">
+              <DropdownMenuLabel className="text-white/80">My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator className="bg-white/10" />
+              <DropdownMenuItem className="text-white hover:bg-white/10 focus:bg-white/20">
+                <div className="flex flex-col items-start">
+                  <span className="font-medium">{user.name}</span>
+                  <span className="text-xs text-white/70">{user.email}</span>
+                  <span className="text-xs text-white/70 capitalize mt-1">
+                    Role: {user.role}
+                  </span>
+                </div>
               </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={handleLogout} className="text-destructive">
+              <DropdownMenuSeparator className="bg-white/10" />
+              <DropdownMenuItem 
+                onClick={handleLogout} 
+                className="text-red-400 hover:bg-white/10 focus:bg-white/20"
+              >
                 Logout
               </DropdownMenuItem>
             </DropdownMenuContent>

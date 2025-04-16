@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { Button } from "@/components/ui/button";
@@ -292,7 +291,7 @@ export default function Inventory() {
   return (
     <AppLayout allowedRoles={["admin", "staff"]}>
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
-        <h1 className="text-3xl font-bold tracking-tight">Inventory Management</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-white">Inventory Management</h1>
         
         {user?.role === "admin" && (
           <Button onClick={() => setIsAddDialogOpen(true)}>
@@ -302,13 +301,13 @@ export default function Inventory() {
         )}
       </div>
 
-      <div className="bg-white rounded-lg border shadow-sm p-6">
+      <div className="bg-white/10 rounded-lg border border-white/20 shadow-sm p-6">
         <div className="flex flex-col md:flex-row gap-4 mb-6">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/70" />
             <Input
               placeholder="Search products..."
-              className="pl-10"
+              className="pl-10 text-white bg-white/10 border-white/20"
               value={filters.search}
               onChange={(e) => setFilters({ ...filters, search: e.target.value })}
             />
@@ -365,7 +364,7 @@ export default function Inventory() {
           </div>
         </div>
 
-        <div className="border rounded-md">
+        <div className="border rounded-md border-white/20">
           <Table>
             <TableHeader>
               <TableRow>
@@ -412,7 +411,7 @@ export default function Inventory() {
                 </TableRow>
               ) : (
                 filteredProducts.map((product) => (
-                  <TableRow key={product.id}>
+                  <TableRow key={product.id} className="text-white/90">
                     <TableCell className="font-medium">{product.name}</TableCell>
                     <TableCell>{product.category}</TableCell>
                     <TableCell className="text-center">${product.price.toFixed(2)}</TableCell>
