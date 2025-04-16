@@ -1,59 +1,73 @@
+# Welcome to your Lovable project
 
-# 🛒 Supermarket Inventory Management System (AI-Powered)
+## Project info
 
-An AI-integrated inventory and billing web app for supermarkets. Built with the MERN stack and enhanced by demand forecasting ML models.
+**URL**: https://lovable.dev/projects/ab35a8b8-0af2-4213-8eb7-8261582ead6d
 
-## ⚙️ Features
-- Role-based authentication (Admin, Cashier, Staff)
-- Product management (CRUD + Search)
-- Real-time billing and stock deduction
-- AI demand forecasting (Prophet / LSTM)
-- Automated restocking recommendations
-- Sales reports and best-selling items dashboard
+## How can I edit this code?
 
-## 🧠 AI Model
-- Python-based microservice using Prophet or LSTM
-- Accepts sales data → returns future stock demand
-- Frontend displays predictions with charts
+There are several ways of editing your application.
 
-## 🧱 Tech Stack
-- **Frontend:** React.js, Axios, Chart.js/Recharts, Tailwind
-- **Backend:** Node.js, Express.js, MongoDB, JWT, Bcrypt
-- **AI Model:** Python, Flask/FastAPI, Prophet/LSTM
+**Use Lovable**
 
-## 📦 MongoDB Collections
-- `users`, `products`, `sales`, `forecasts`
+Simply visit the [Lovable Project](https://lovable.dev/projects/ab35a8b8-0af2-4213-8eb7-8261582ead6d) and start prompting.
 
-## 🛠️ Getting Started
+Changes made via Lovable will be committed automatically to this repo.
 
-### Backend
-```bash
-cd server
-npm install
+**Use your preferred IDE**
+
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-### Frontend
-```bash
-cd client
-npm install
-npm start
-```
+**Edit a file directly in GitHub**
 
-### ML Model (Optional)
-```bash
-cd ml_model
-python demand_forecasting.py
-```
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-## 🧪 Roles
-- Admin → Full access
-- Cashier → Billing only
-- Staff → View-only or limited access
+**Use GitHub Codespaces**
 
-## 📊 To Do
-- [ ] Build REST APIs for all features
-- [ ] Implement protected routes
-- [ ] Integrate AI microservice
-- [ ] Test entire flow from login → inventory → billing → insights
-- [ ] Deploy all services
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
+
+## What technologies are used for this project?
+
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/ab35a8b8-0af2-4213-8eb7-8261582ead6d) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
