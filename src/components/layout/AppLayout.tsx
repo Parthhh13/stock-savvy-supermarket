@@ -25,8 +25,8 @@ export function AppLayout({
   // If auth is still loading, show loading state
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="animate-pulse text-lg font-medium">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#111827] via-[#192339] to-[#0F172A]">
+        <div className="animate-pulse text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-500">Loading...</div>
       </div>
     );
   }
@@ -44,12 +44,12 @@ export function AppLayout({
     !allowedRoles.includes(user?.role || '')
   ) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4">
-        <h1 className="text-2xl font-bold mb-4">Access Denied</h1>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#111827] via-[#192339] to-[#0F172A] p-4">
+        <h1 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-pink-600">Access Denied</h1>
         <p className="text-muted-foreground mb-6">
           You don't have permission to access this page.
         </p>
-        <a href="/" className="px-4 py-2 bg-primary text-primary-foreground rounded">
+        <a href="/" className="px-4 py-2 gradient-primary rounded">
           Return to Dashboard
         </a>
       </div>
@@ -57,7 +57,7 @@ export function AppLayout({
   }
   
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col">
       <Header sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       
       <div className="flex flex-1 overflow-hidden">

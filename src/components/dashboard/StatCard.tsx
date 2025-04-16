@@ -26,13 +26,15 @@ export function StatCard({
   iconColor = "text-primary",
 }: StatCardProps) {
   return (
-    <Card className={cn("overflow-hidden", className)}>
+    <Card className={cn("overflow-hidden backdrop-blur-lg border-white/5 shadow-lg", className)}>
       <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-        <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        <Icon className={cn("h-5 w-5", iconColor)} />
+        <CardTitle className="text-sm font-medium bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">{title}</CardTitle>
+        <div className={cn("p-2 rounded-full bg-gradient-to-br from-white/10 to-transparent", iconColor)}>
+          <Icon className="h-5 w-5" />
+        </div>
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold">{value}</div>
+        <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">{value}</div>
         {description && <p className="text-xs text-muted-foreground mt-1">{description}</p>}
         {trend && (
           <div className="flex items-center mt-2">
